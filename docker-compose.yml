@@ -1,6 +1,8 @@
-version: '2' # 表示该 Docker-Compose 文件使用的是 Version 2 file
+version: '3.1' # 表示该 Docker-Compose 文件使用的是 Version 2 file
 services:
-  docker-demo:  # 指定服务名称
-    build: .  # 指定 Dockerfile 所在路径
+  testcd:  # 指定服务名称
+    build: docker  # 指定 Dockerfile 所在路径
+    restart: always
+    container_name: testcd
     ports:    # 指定端口映射
       - "8080:8080"
